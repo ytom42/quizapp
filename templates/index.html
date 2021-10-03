@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/resource/index.css">
+	<title>Quizapp</title>
+</head>
+<body>
+	<section>
+		<table border="1">
+			<th>Question</th>
+			<th>Answer</th>
+			{{range .quizzes}}
+				<tr>
+					<td>{{.Question}}</td>
+					<td>{{.Answer}}</td>
+				</tr>
+			{{end}}
+		</table>
+	</section>
+	<section>
+		<form method="POST" action="/add">
+			<input type="text" id="question" name="question" required>
+			<input type="text" id="answer" name="answer" required>
+			<button>追加</button>
+		</form>
+	</section>
+</body>
+</html>
